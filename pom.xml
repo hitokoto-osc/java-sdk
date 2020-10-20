@@ -20,7 +20,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>cn.hitokoto.client.Client</mainClass>
+							<mainClass>cn.hitokoto.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -41,7 +41,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>cn.hitokoto.client.Client</mainClass>
+							<mainClass>cn.hitokoto.Main</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

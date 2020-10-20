@@ -1,7 +1,8 @@
-package cn.hitokoto.client;
+package cn.hitokoto.sdk;
 
-import cn.hitokoto.client.beans.DingtalkResponse;
-import cn.hitokoto.client.beans.HitokotoResponse;
+import cn.hitokoto.beans.DingtalkResponse;
+import cn.hitokoto.beans.HitokotoResponse;
+import cn.hitokoto.tools.Env;
 import com.google.gson.Gson;
 
 import java.io.IOException;
@@ -12,8 +13,23 @@ import java.net.http.HttpResponse;
 
 public class Dingtalk
 {
-    private static final String mirrorLink    = "https://v1.hitokoto.cn";
-    private static final String dingTalkToken = "";
+    private String mirrorLink    = "https://v1.hitokoto.cn";
+    private String dingTalkToken = "";
+
+    {
+        this.getEnv();
+    }
+
+    public void getEnv()
+    {
+        if (Env.exists("HITOKOTO_MIRROR")) {
+            mirrorLink = Env.get("HITOKOTO_MIRROR");
+        }
+
+        if (Env.exists("DINGTALK_TOKEN")) {
+            dingTalkToken = Env.get("DINGTALK_TOKEN");
+        }
+    }
 
     public String ding()
     {
@@ -23,12 +39,11 @@ public class Dingtalk
             HitokotoResponse contents = hitokoto.getOne();
 
             // 构建数据
-            Dingtalk dingtalk = new Dingtalk();
-            String   data     = dingtalk.makeData(contents.getFrom(), contents.getCreator(), contents.getHitokoto());
+            String data = this.makeData(contents.getFrom(), contents.getCreator(), contents.getHitokoto());
 
             // 发送给钉钉
             String           message          = "success";
-            DingtalkResponse dingtalkResponse = dingtalk.postWithJson(dingTalkToken, data);
+            DingtalkResponse dingtalkResponse = this.postWithJson(dingTalkToken, data);
             if (dingtalkResponse.getErrcode() != 0) {
                 message = dingtalkResponse.getErrmsg();
             }
@@ -58,7 +73,7 @@ public class Dingtalk
 
     public String makeData(String from, String creator, String hitokoto)
     {
-        String json = "{\"msgtype\":\"markdown\",\"markdown\":{\"title\":\"一言\",\"text\":\"**%s** > %s「%s」\"}}";
+        String json = "{\"msgtype\":\"markdown\",\"markdown\":{\"title\":\"一言\",\"text\":\"**%s** \n> %s「%s」\"}}";
         return String.format(json, hitokoto, creator, from);
     }
 }

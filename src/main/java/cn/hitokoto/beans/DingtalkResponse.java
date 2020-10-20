@@ -1,4 +1,4 @@
-package cn.hitokoto.client.beans;
+package cn.hitokoto.beans;
 
 public class DingtalkResponse
 {

@@ -1,6 +1,8 @@
-package cn.hitokoto.client;
+package cn.hitokoto;
 
-public class Client
+import cn.hitokoto.sdk.Dingtalk;
+
+public class Main
 {
     public static void main(String[] args)
     {

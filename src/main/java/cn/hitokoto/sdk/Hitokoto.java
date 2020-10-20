@@ -1,6 +1,6 @@
-package cn.hitokoto.client;
+package cn.hitokoto.sdk;
 
-import cn.hitokoto.client.beans.HitokotoResponse;
+import cn.hitokoto.beans.HitokotoResponse;
 import com.google.gson.Gson;
 
 import java.io.IOException;
