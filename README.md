@@ -11,25 +11,18 @@ hitokoto-java-sdk
 
 开发计划不分先后，仅提供列表
 
+- [x] 单元测试
 - [x] 钉钉 robot 推送
 - [ ] 实现语句接口
 - [ ] 实现核心接口
-- [ ] 使用配置文件进行配置管理
-- [ ] 接受命令行参数
-- [ ] 单元测试
 - [ ] 持续集成
+- [ ] 完善的sdk文档
 
-## 配置
+## 调用指南
 
-目前仅实现了钉钉通知，暂时使用类属性进行配置，未来会改为 yaml
+目前实现了 /auth 和部分 /user 接口，具体使用方法，参考 /src/tests 中的文件
 
-钉钉机器人具体功能可参考 [hitokoto-dingtalk-client](https://github.com/hitokoto-osc/hitokoto-dingtalk-client)
-```java 
-// 一言网的API或其镜像地址
-private static final String mirrorLink    = "https://v1.hitokoto.cn";
-// 钉钉机器人 Token
-private static final String dingTalkToken = "";
-```
+具体示例待补充
 
 ## 编译运行
 
@@ -41,11 +34,11 @@ mvn clean package
 默认打包所有依赖，默认运行入口方法
 
 ```shell
-java -jar target/hitokoto-client-jar-with-dependencies.jar 
+java -jar target/hitokoto-java-sdk-jar-with-dependencies.jar
 ```
 
 为打包依赖，可导入其它项目使用
 
 ```shell
-hitokoto-client.jar 
+java -jar target/hitokoto-java-sdk.jar
 ```
