@@ -14,7 +14,7 @@ final public class URI
     private String              anchor = "";
     private Map<String, String> params = new HashMap<>();
 
-    URI(String path)
+    public URI(String path)
     {
         if (path.startsWith("https://") || path.startsWith("http://")) {
             this.prefix = path;
