@@ -7,7 +7,7 @@ import cn.hitokoto.tools.URI;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
 
-public class UserRegister extends cn.hitokoto.Request implements RequestInterface
+public class UserRegister extends cn.hitokoto.Request
 {
     private String name;
     private String email;
