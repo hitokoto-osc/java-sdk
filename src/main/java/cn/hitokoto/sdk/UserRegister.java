@@ -1,6 +1,5 @@
 package cn.hitokoto.sdk;
 
-import cn.hitokoto.RequestInterface;
 import cn.hitokoto.tools.Request;
 import cn.hitokoto.tools.URI;
 

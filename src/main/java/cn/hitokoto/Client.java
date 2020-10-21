@@ -14,7 +14,7 @@ public class Client
         this.token = profile;
     }
 
-    Client()
+    public Client()
     {
         this.token = Token.empty();
     }
