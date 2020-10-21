@@ -9,7 +9,7 @@ public class Client
 {
     private Token token;
 
-    Client(Token profile)
+    public Client(Token profile)
     {
         this.token = profile;
     }
