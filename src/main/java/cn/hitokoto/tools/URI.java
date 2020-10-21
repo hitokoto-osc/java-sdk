@@ -10,8 +10,8 @@ final public class URI
 {
     private String              prefix = "https://hitokoto.cn/api/restful/v1";
     private StringBuilder       url    = new StringBuilder();
-    private String              path;
-    private String              anchor;
+    private String              path   = "";
+    private String              anchor = "";
     private Map<String, String> params = new HashMap<>();
 
     URI(String path)
@@ -42,7 +42,7 @@ final public class URI
             this.url.append(String.join("&", queryParams));
         }
 
-        if (anchor != null) {
+        if (!anchor.equals("")) {
             this.url.append("#");
             this.url.append(anchor);
         }
