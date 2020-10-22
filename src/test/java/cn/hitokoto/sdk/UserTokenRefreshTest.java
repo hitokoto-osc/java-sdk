@@ -11,7 +11,7 @@ class UserTokenRefreshTest
     @Test
     void request()
     {
-        Client           client   = new Client(Token.use("E03GhtRnQllMEhsbqWrkNO1kkeL4GBu5Kpw0wNin"));
+        Client           client   = new Client(Token.use(""));
         UserTokenRefresh request  = new UserTokenRefresh();
         Response         response = client.getObjectResponse(request);
 

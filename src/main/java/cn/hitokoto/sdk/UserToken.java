@@ -1,12 +1,11 @@
 package cn.hitokoto.sdk;
 
-import cn.hitokoto.RequestInterface;
 import cn.hitokoto.tools.Request;
 import cn.hitokoto.tools.URI;
 
 import java.net.http.HttpResponse;
 
-public class UserToken extends cn.hitokoto.Request implements RequestInterface
+public class UserToken extends cn.hitokoto.Request
 {
     public HttpResponse<String> request()
     {

@@ -11,7 +11,7 @@ class UserInfoTest
     @Test
     void request()
     {
-        Client                     client   = new Client(Token.use("E03GhtRnQllMEhsbqWrkNO1kkeL4GBu5Kpw0wNin"));
+        Client                     client   = new Client(Token.use(""));
         UserInfo                   request  = new UserInfo();
         Response                   response = client.getObjectResponse(request);
         cn.hitokoto.beans.UserInfo user     = response.wrap(cn.hitokoto.beans.UserInfo.class);

@@ -6,11 +6,11 @@ import cn.hitokoto.tools.URI;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
 
-public class UserTokenRefresh extends cn.hitokoto.Request
+public class UserEmailVerify extends cn.hitokoto.Request
 {
     public HttpResponse<String> request()
     {
-        URI uri = new URI("/user/token/refresh");
+        URI uri = new URI("/user/email/verify");
         uri.withToken(this.getToken());
 
         return Request.put(uri, new HashMap<>());

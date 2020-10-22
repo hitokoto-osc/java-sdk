@@ -6,23 +6,25 @@ import cn.hitokoto.tools.URI;
 import java.net.http.HttpResponse;
 import java.util.HashMap;
 
-public class UserLogin extends cn.hitokoto.Request
+public class UserChangeEmail extends cn.hitokoto.Request
 {
-    private String email;
+    private String newEmail;
     private String password;
 
     public HttpResponse<String> request()
     {
-        HashMap<String, String> data = new HashMap<>();
-        data.put("email", email);
+        HashMap<String, Object> data = new HashMap<>();
         data.put("password", password);
+        data.put("email", newEmail);
 
-        return Request.post(URI.create("/auth/login"), data);
+        URI uri = URI.create("/user/email");
+        uri.withToken(this.getToken());
+        return Request.put(uri, data);
     }
 
-    public void setEmail(String email)
+    public void setNewEmail(String newEmail)
     {
-        this.email = email;
+        this.newEmail = newEmail;
     }
 
     public void setPassword(String password)

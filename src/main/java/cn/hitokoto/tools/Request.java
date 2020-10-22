@@ -45,7 +45,7 @@ public class Request
         return null;
     }
 
-    public static HttpResponse<String> put(URI uri, Map<String, String> body)
+    public static HttpResponse<String> put(URI uri, Map<String, Object> body)
     {
         body.put("_method", "PUT");
         return post(uri, body);

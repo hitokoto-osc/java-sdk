@@ -1,13 +1,12 @@
 package cn.hitokoto.sdk;
 
-import cn.hitokoto.RequestInterface;
 import cn.hitokoto.tools.Request;
 import cn.hitokoto.tools.URI;
 
 import java.net.http.HttpResponse;
 import java.util.HashMap;
 
-public class UserRequestResetPassword extends cn.hitokoto.Request implements RequestInterface
+public class UserRequestResetPassword extends cn.hitokoto.Request
 {
     private String email;
 
