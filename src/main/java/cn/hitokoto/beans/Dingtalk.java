@@ -1,6 +1,6 @@
 package cn.hitokoto.beans;
 
-public class DingtalkResponse
+public class Dingtalk
 {
     private Integer errcode;
     private String  errmsg;

@@ -1,6 +1,6 @@
 package cn.hitokoto.sdk;
 
-import cn.hitokoto.beans.HitokotoResponse;
+import cn.hitokoto.beans.Hitokoto;
 import cn.hitokoto.tools.Request;
 import cn.hitokoto.tools.URI;
 import com.google.gson.Gson;
@@ -18,7 +18,7 @@ public class Dingtalk extends cn.hitokoto.Request
     {
         Gson                 gson     = new Gson();
         HttpResponse<String> response = Request.get(cn.hitokoto.tools.URI.create(this.mirrorLink));
-        HitokotoResponse     contents = gson.fromJson(response.body(), HitokotoResponse.class);
+        Hitokoto             contents = gson.fromJson(response.body(), Hitokoto.class);
 
         return this.ding(dingTalkToken, contents.getFrom(), contents.getCreator(), contents.getHitokoto());
     }

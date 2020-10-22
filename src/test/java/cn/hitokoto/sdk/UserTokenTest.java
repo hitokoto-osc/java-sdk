@@ -6,7 +6,7 @@ import cn.hitokoto.Token;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class UserToeknTest
+class UserTokenTest
 {
     @Test
     void request()

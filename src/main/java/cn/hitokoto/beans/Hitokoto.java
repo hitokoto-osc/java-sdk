@@ -1,6 +1,6 @@
 package cn.hitokoto.beans;
 
-public class HitokotoResponse
+public class Hitokoto
 {
     private Integer id;
     private String  uuid;
@@ -133,5 +133,14 @@ public class HitokotoResponse
     public void setUuid(String uuid)
     {
         this.uuid = uuid;
+    }
+    
+    @Override
+    public String toString()
+    {
+        return "Hitokoto{" + "id=" + id + ", uuid='" + uuid + '\'' + ", hitokoto='" + hitokoto + '\'' + ", type='" +
+                type + '\'' + ", from='" + from + '\'' + ", from_who='" + from_who + '\'' + ", creator='" + creator +
+                '\'' + ", creator_uid=" + creator_uid + ", reviewer=" + reviewer + ", commit_from='" + commit_from +
+                '\'' + ", created_at='" + created_at + '\'' + ", length=" + length + '}';
     }
 }
