@@ -1,0 +1,26 @@
+name: Yiyan Java SDK
+
+on:
+    push:
+        branches:
+            - master
+    pull_request:
+        branches:
+            - master
+    release:
+        types: [created]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            -   uses: actions/checkout@master
+            -   name: Set up JDK 11
+                uses: actions/setup-java@master
+                with:
+                    java-version: 11
+                    server-id: github
+                    settings-path: ${{ github.workspace }}
+
+            -   name: Build with Maven
+                run: mvn -B package --file pom.xml -DskipTests
