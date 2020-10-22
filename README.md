@@ -17,6 +17,8 @@ hitokoto-java-sdk
 - [x] 实现核心接口
 - [ ] 持续集成
 - [ ] 完善的sdk文档
+- [ ] 发布为 Github Pages 允许使用 mvn 安装
+- [ ] 发布到 mvnen 中央仓库
 
 ## 调用指南
 
